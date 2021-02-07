@@ -1,36 +1,11 @@
-import {Router} from "express";
+import { Router } from 'express';
 
-import {GetProductsController} from "../controllers/product/GetProductsController";
-// import UserController from '../controllers/UserController';
-// import {checkJwt} from '../middlewares/checkJwt';
-// import {checkRole} from '../middlewares/checkRole';
+import { DeleteProductController } from '../controllers/product/DeleteProductController';
+import { UpdateProductController } from '../controllers/product/UpdateProductController';
 
 const router: Router = Router();
 
-router.get("/", GetProductsController.get);
-
-// // Get one user
-// router.get(
-//   '/:id([0-9]+)',
-//   [checkJwt, checkRole(['ADMIN'])],
-//   UserController.getOneById
-// );
-
-// // Create a new user
-// router.post('/', [checkJwt, checkRole(['ADMIN'])], UserController.newUser);
-
-// // Edit one user
-// router.patch(
-//   '/:id([0-9]+)',
-//   [checkJwt, checkRole(['ADMIN'])],
-//   UserController.editUser
-// );
-
-// // Delete one user
-// router.delete(
-//   '/:id([0-9]+)',
-//   [checkJwt, checkRole(['ADMIN'])],
-//   UserController.deleteUser
-// );
+router.put('/:id([0-9]+)', UpdateProductController.put);
+router.delete('/:id([0-9]+)', DeleteProductController.delete);
 
 export default router;

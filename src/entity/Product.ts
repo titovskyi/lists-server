@@ -1,26 +1,34 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import {List} from "./List";
+import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import { List } from './List';
 
 @Entity()
 export class Product {
-  @PrimaryGeneratedColumn()
-  public id: number;
+    @PrimaryGeneratedColumn()
+    public id: number;
 
-  @Column()
-  public name: string;
+    @Column()
+    public name: string;
 
-  @Column()
-  public category: string;
+    @Column()
+    public category: string;
 
-  @Column()
-  public status: boolean;
+    @Column()
+    public status: boolean;
 
-  @ManyToOne(
-    () => List,
-    (list) => list.product
-  )
-  @JoinColumn({name: "listId"})
-  public list: Promise<List>;
+    @Column()
+    @CreateDateColumn()
+    public createdAt: Date;
+
+    @Column()
+    @UpdateDateColumn()
+    public updateAt: Date;
+
+    @ManyToOne(
+        () => List,
+        (list) => list.products
+    )
+    @JoinColumn({ name: 'listId' })
+    public list: List;
 }
 
 export default Product;
