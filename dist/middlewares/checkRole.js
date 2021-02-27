@@ -1,9 +1,7 @@
-import { Request, Response, NextFunction } from 'express';
-import { getRepository } from 'typeorm';
-
-import { User } from '../entity/User';
-
-export const checkRole = (roles: Array<string>) => {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.checkRole = void 0;
+exports.checkRole = (roles) => {
     // return async (req: Request, res: Response, next: NextFunction) => {
     //     // Get the user ID from previous midleware
     //     const id = res.locals.jwtPayload.userId;
@@ -25,3 +23,4 @@ export const checkRole = (roles: Array<string>) => {
     //     }
     // };
 };
+//# sourceMappingURL=checkRole.js.map
