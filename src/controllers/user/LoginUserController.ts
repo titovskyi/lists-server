@@ -11,6 +11,9 @@ import { validate } from 'class-validator';
 export class LoginUserController {
     public static post = async (req: Request, res: Response) => {
         const { phone } = req.body;
+
+        console.log(phone, 'controller');
+
         const authToken = jwt.sign({ phone }, config.jwtSecret);
         const userRepository: Repository<User> = getRepository(User);
         const user: User | void = await userRepository
