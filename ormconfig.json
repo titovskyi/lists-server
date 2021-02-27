@@ -1,10 +1,8 @@
 {
    "type": "postgres",
-   "host": "localhost",
-   "port": 5433,
-   "username": "postgres",
-   "password": "0123456789",
-   "database": "purchaseLists",
+
+   "url": "postgres://dzvyikshhlgify:949ab5998fc92b23547adad08cc0d357cdb0e78fdc6581978bd22334b97d7647@ec2-3-222-127-167.compute-1.amazonaws.com:5432/da4s5vf13dp8o4",
+
    "synchronize": true,
    "logging": false,
    "entities": [
