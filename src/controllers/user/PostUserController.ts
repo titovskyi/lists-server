@@ -12,7 +12,7 @@ export class PostUserController {
             .values([{ phone: user.phone, authToken: user.authToken }])
             .execute()
             .then(() => {
-                res.status(200).send(user.authToken);
+                res.status(200).send({ authToken: user.authToken });
             })
             .catch(() => {
                 res.status(400).send('Что-то пошло не так PostUserController insert');

@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 
 import User from '../../entity/User';
+import List from "../../entity/List";
 
 export class GetUserListsController {
     public static get = async (req: Request, res: Response) => {
@@ -15,7 +16,7 @@ export class GetUserListsController {
             .orderBy('lists.updateAt', 'DESC')
             .getOne()
             .then((user) => {
-                res.status(200).send(user);
+                res.status(200).send(user.lists)
             })
             .catch(() => {
                 res.status(400).send('Что-то пошло не так GetUserListsController select');
