@@ -5,6 +5,12 @@
    "username": "dzvyikshhlgify",
    "password": "949ab5998fc92b23547adad08cc0d357cdb0e78fdc6581978bd22334b97d7647",
    "database": "da4s5vf13dp8o4",
+   "ssl": true,
+   "extra": {
+      "ssl": {
+         "rejectUnauthorized": false
+      }
+   },
    "synchronize": true,
    "logging": false,
    "entities": [
