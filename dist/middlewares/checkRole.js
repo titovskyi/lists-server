@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.checkRole = void 0;
-exports.checkRole = (roles) => {
+const checkRole = (roles) => {
     // return async (req: Request, res: Response, next: NextFunction) => {
     //     // Get the user ID from previous midleware
     //     const id = res.locals.jwtPayload.userId;
@@ -23,4 +23,5 @@ exports.checkRole = (roles) => {
     //     }
     // };
 };
+exports.checkRole = checkRole;
 //# sourceMappingURL=checkRole.js.map

@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.checkJwt = void 0;
 const jwt = require("jsonwebtoken");
 const config_1 = require("../config/config");
-exports.checkJwt = (req, res, next) => {
+const checkJwt = (req, res, next) => {
     const authToken = req.headers.authtoken;
     let jwtPayload;
     try {
@@ -16,4 +16,5 @@ exports.checkJwt = (req, res, next) => {
     }
     next();
 };
+exports.checkJwt = checkJwt;
 //# sourceMappingURL=checkJwt.js.map
