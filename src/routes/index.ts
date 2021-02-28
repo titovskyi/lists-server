@@ -6,6 +6,7 @@ import { checkJwt } from '../middlewares/checkJwt';
 
 const routes: Router = Router();
 
+routes.get('/', async (req: Request, res: Response) => {console.log('hello / route')});
 routes.use('/user', user);
 routes.use('/list', [checkJwt], list);
 routes.use('/product', [checkJwt], product);
